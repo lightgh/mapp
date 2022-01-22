@@ -1,0 +1,8 @@
+GET http://{{host}}/playlist/argPassing2?name=Sinister&address=Abj
+
+### List Playlist
+GET http://localhost:8080/playlist/898989
+Accept: application/json
+
+###
+GET http://localhost:8080/playlist/produceReq
