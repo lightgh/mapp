@@ -1,8 +1,12 @@
 package com.mediaapp.mapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
@@ -10,6 +14,9 @@ import java.util.List;
 @RequestMapping("/playlist")
 @RestController
 public class PlaylistController {
+
+    @Autowired
+    PlaylistService playlistService;
 
     @RequestMapping("/{id}")
     public String getAllPlaylists(@PathVariable long id) {
@@ -43,7 +50,7 @@ public class PlaylistController {
         return Arrays.asList(name, address).toArray();
     }
 
-    @RequestMapping(value = "reqHeader", headers = {"content-type=application/json", "accept=application/json" })
+    @RequestMapping(value = "/reqHeader", headers = {"content-type=application/json", "Accept=application/json" })
     public String[] getHeadersCalled(){
         return new String[] {"Heading1", "Heading2"};
     }
@@ -56,6 +63,16 @@ public class PlaylistController {
     @RequestMapping(value = "produceReq", produces = {"text/plain", "application/*"})
     public String[] producesReqApp() {
         return new String[]{"Plain", "text", "Producing RequestMapping Handler"};
+    }
+
+
+    @RequestMapping("/aplaylist/{id}")
+    public Playlist getPlaylist(@PathVariable BigInteger id){
+        try {
+            return playlistService.getPlaylist(id);
+        } catch (PlaylistNotFoundException ex) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, ex.getMessage(), ex);
+        }
     }
 
 

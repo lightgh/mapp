@@ -6,3 +6,10 @@ Accept: application/json
 
 ###
 GET http://localhost:8080/playlist/produceReq
+
+###
+GET http://localhost:8080/media-playlist/usingResponseBody
+
+###
+GET http://localhost:8080/media-playlist/usingRequestParamAndResponseBody?name=Peterson
+
