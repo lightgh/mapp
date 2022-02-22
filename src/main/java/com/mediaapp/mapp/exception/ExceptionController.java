@@ -1,6 +1,7 @@
-package com.mediaapp.mapp;
+package com.mediaapp.mapp.exception;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mediaapp.mapp.model.ErrorCodes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.http.ResponseEntity;
@@ -34,19 +35,3 @@ class ResponseStatusError {
 
 }
 
-enum ErrorCodes {
-
-    PLAYLIST_NOT_FOUND(1001),
-    SONG_NOT_FOUND(1002);
-
-    private int code;
-
-    ErrorCodes(int code) {
-        this.code = code;
-    }
-
-    public int code() {
-        return this.code;
-    }
-
-}

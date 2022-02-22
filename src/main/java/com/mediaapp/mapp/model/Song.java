@@ -1,4 +1,4 @@
-package com.mediaapp.mapp;
+package com.mediaapp.mapp.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;

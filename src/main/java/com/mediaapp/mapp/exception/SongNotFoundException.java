@@ -1,4 +1,4 @@
-package com.mediaapp.mapp;
+package com.mediaapp.mapp.exception;
 
 import java.math.BigInteger;
 

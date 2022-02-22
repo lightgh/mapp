@@ -1,15 +1,14 @@
-package com.mediaapp.mapp;
+package com.mediaapp.mapp.model;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mediaapp.mapp.model.Song;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigInteger;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
 @Data // for generating getter-setter-toString-hashcode-equals methods

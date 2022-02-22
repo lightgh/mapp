@@ -1,5 +1,6 @@
 package com.mediaapp.mapp;
 
+import com.mediaapp.mapp.model.Playlist;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/media-playlist-mod")

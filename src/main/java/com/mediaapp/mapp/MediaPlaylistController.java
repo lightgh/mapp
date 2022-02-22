@@ -1,6 +1,7 @@
 package com.mediaapp.mapp;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.mediaapp.mapp.model.Playlist;
+import com.mediaapp.mapp.service.PlaylistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

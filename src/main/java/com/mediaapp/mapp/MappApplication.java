@@ -13,15 +13,4 @@ public class MappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MappApplication.class, args);
 	}
-
-	@GetMapping("/")
-	public String testEndpoint(){
-		return "Hello World";
-	}
-
-	@GetMapping("/hello")
-	@ResponseBody
-	public Object showHelloWorldMessage(){
-		return "Calling Show Hello World Message Method";
-	}
 }

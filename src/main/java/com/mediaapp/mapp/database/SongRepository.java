@@ -1,5 +1,6 @@
-package com.mediaapp.mapp;
+package com.mediaapp.mapp.database;
 
+import com.mediaapp.mapp.model.Song;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

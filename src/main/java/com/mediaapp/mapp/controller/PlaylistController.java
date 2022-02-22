@@ -1,24 +1,35 @@
-package com.mediaapp.mapp;
+package com.mediaapp.mapp.controller;
 
+import com.mediaapp.mapp.exception.PlaylistNotFoundException;
+import com.mediaapp.mapp.model.Playlist;
+import com.mediaapp.mapp.service.PlaylistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.List;
 
 
-@RequestMapping("/playlist")
-@RestController
+//@RequestMapping("/playlist")
+@Controller
 public class PlaylistController {
 
     @Autowired
     PlaylistService playlistService;
 
-    @RequestMapping("/{id}")
+    @GetMapping("/")
+    public String listPlaylistAndSongs(Model model) {
+        model.addAttribute("playlists", playlistService.getAllPlaylists());
+        return "index";
+    }
+
+   /*
+
+   @RequestMapping("/{id}")
     public String getAllPlaylists(@PathVariable long id) {
         return "GetAllPlaylists (Id): " + id;
     }
@@ -75,5 +86,5 @@ public class PlaylistController {
         }
     }
 
-
+*/
 }
