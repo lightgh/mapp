@@ -17,7 +17,7 @@ public class PlaylistRestController {
 
     PlaylistService playlistService;
 
-    @Qualifier("name")
+    @Qualifier("playlistService")
     @Autowired
     public void setService(PlaylistService playlistService) {
         this.playlistService = playlistService;
@@ -43,7 +43,7 @@ public class PlaylistRestController {
         return playlistService.createPlaylist(name);
     }
 
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public void deletePlaylist(final @PathVariable("id") BigInteger playlistId) {
         playlistService.deletePlaylist(playlistId);
     }
